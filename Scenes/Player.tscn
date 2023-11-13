@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd8hcw56vqv6a"]
+
+[ext_resource type="Script" path="res://Scripts/Player.cs" id="1_cy8f8"]
+[ext_resource type="Texture2D" uid="uid://vavbqkhqxtlh" path="res://Assets/playerShip1_orange.png" id="2_uudt6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wpadt"]
+size = Vector2(98, 76)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_cy8f8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_uudt6")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wpadt")
+
+[node name="GunTimer" type="Timer" parent="."]
+wait_time = 0.25
+autostart = true
+
+[connection signal="timeout" from="GunTimer" to="." method="OnGunTimerTimeout"]
