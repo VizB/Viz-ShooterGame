@@ -4,10 +4,8 @@ using System;
 namespace ShooterGame.Scripts;
 public partial class Bullet : Area2D
 {
-    [Export]
-    public int Speed = 400;
-    [Export]
-    public int Damage = 1;
+    [Export] public int Speed = 400;
+    [Export] public int Damage = 5;
 
     private Vector2 _velocity = new(0, -1);
 

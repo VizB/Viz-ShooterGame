@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b860njm733t17"]
+
+[ext_resource type="Script" path="res://Scripts/PowerUp.cs" id="1_6dgtr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp425"]
+size = Vector2(26.9504, 35.7539)
+
+[node name="Power-Up" type="Area2D"]
+scale = Vector2(1.00255, 0.990003)
+script = ExtResource("1_6dgtr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+scale = Vector2(1.24298, 0.950945)
+shape = SubResource("RectangleShape2D_fp425")

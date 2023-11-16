@@ -15,6 +15,7 @@ public partial class Player : Area2D
     public override void _Ready()
     {
         _screenSize = GetViewportRect().Size;
+        // Preload bullet scene
         _bulletScene = GD.Load<PackedScene>("res://Scenes/Bullet.tscn");
     }
 
@@ -39,7 +40,6 @@ public partial class Player : Area2D
         
         Position += velocity;
         
-        //TODO: Clamp the player's position to the middle of the screen.
         Position = new Vector2(
             Mathf.Clamp(Position.X, 0, _screenSize.X),
             Mathf.Clamp(Position.Y, 0, _screenSize.Y)
@@ -47,4 +47,9 @@ public partial class Player : Area2D
     }
 
     private void OnGunTimerTimeout() { _canShoot = true; }
+
+    private void OnPowerUpTouched()
+    {
+        GetNode<PowerUp>("").QueueFree();
+    }
 }

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://lsw502buus5f"]
+
+[ext_resource type="PackedScene" uid="uid://b860njm733t17" path="res://Scenes/PowerUp.tscn" id="1_hwnjm"]
+[ext_resource type="Script" path="res://Scripts/PowerUpSpeed.cs" id="2_e0b2u"]
+
+[node name="Power-Up" instance=ExtResource("1_hwnjm")]
+script = ExtResource("2_e0b2u")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(1.01574, 1)

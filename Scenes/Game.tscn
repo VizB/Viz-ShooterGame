@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://drieljut1meni"]
 
-[ext_resource type="Script" path="res://Scripts/Game.cs" id="1_oyx26"]
+[ext_resource type="Script" path="res://Scripts/Scenes/Game.cs" id="1_oyx26"]
 [ext_resource type="PackedScene" uid="uid://cd8hcw56vqv6a" path="res://Scenes/Player.tscn" id="2_06gbe"]
 [ext_resource type="Script" path="res://Scripts/FPS.cs" id="3_63f1t"]
 
@@ -13,6 +13,11 @@ gradient = SubResource("Gradient_xafs3")
 
 [node name="ShooterGame" type="Node2D"]
 script = ExtResource("1_oyx26")
+
+[node name="AsteroidTimer" type="Timer" parent="."]
+
+[node name="Power Up Timer" type="Timer" parent="."]
+wait_time = 0.05
 
 [node name="BackgroundGradient" type="TextureRect" parent="."]
 offset_top = 1000.0
@@ -31,3 +36,6 @@ offset_right = 40.0
 offset_bottom = 23.0
 scale = Vector2(1, 0.996826)
 script = ExtResource("3_63f1t")
+_buildId = "0.0.4"
+
+[connection signal="timeout" from="Power Up Timer" to="." method="OnPowerUpTimerTimeout"]
