@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbpofgu64ik30"]
+
+[ext_resource type="PackedScene" uid="uid://b860njm733t17" path="res://Scenes/PowerUp.tscn" id="1_4ttk8"]
+[ext_resource type="Script" path="res://Scripts/PowerUpHealth.cs" id="2_ji83v"]
+
+[node name="Power-Up" instance=ExtResource("1_4ttk8")]
+script = ExtResource("2_ji83v")
